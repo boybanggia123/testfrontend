@@ -1,0 +1,202 @@
+body.modal-open {
+  padding-right: 0 !important; /* Loại bỏ padding-right khi modal mở */
+}
+
+.relative video{
+    width: 1399px;
+    height: auto;
+}
+.banner-1 img{
+    width: 100%;
+    height: auto;
+}
+.product-card {
+    border: none;
+    transition: transform 0.3s ease;
+  }
+  .product-card:hover {
+    transform: scale(1.05);
+  }
+  .product-image {
+    position: relative;
+  }
+  .quick-add-btn {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .product-image:hover .quick-add-btn {
+    opacity: 1;
+  }
+  .product-title {
+    font-weight: 600;
+    color: #000;
+  }
+  .product-price {
+    font-size: 1.2rem;
+  }
+  .product-offer {
+    font-size: 0.9rem;
+    color: #555;
+  }
+.namesup{
+    font-size: 12px;
+}
+.custom-container {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+.text_h2{
+    font-size: 20px;
+    font-weight: bolder;
+}
+.button_new button{
+    border-radius: 30px;
+    height: 30px;
+    color: black;
+    background: white;
+    border: 0.5px solid #000;
+}
+.button_new button:hover{
+    background: #000;
+    color: white;
+    transition: all 0.7s;
+}
+.button_new button a{
+    padding: 15px;
+    font-size: 14px;
+    font-weight: 500;
+}
+.w-img .sup-wimg{
+    font-size: 14px;
+    height: 13%;
+}
+.w-img .sup-wimg:hover{
+  background-color: rgb(43, 43, 43);
+}
+
+/* Đặt nền xám cho phần chứa ảnh */
+.gray-background {
+  position: relative;
+  overflow: hidden; /* Đảm bảo phần khung không bị thay đổi khi ảnh phóng to */
+  width: 100%; /* Đảm bảo chiều rộng khung */
+  height: 100%; /* Đảm bảo chiều cao khung */
+}
+
+.img-fluid {
+  transition: transform 0.3s ease, filter 0.3s ease;
+  display: block;
+  width: 100%; /* Giữ ảnh vừa với khung */
+  height: auto; /* Giữ tỉ lệ ảnh */
+}
+
+.w-img:hover .img-fluid {
+  transform: scale(1.1); /* Phóng to ảnh khi hover */
+  filter: brightness(1); /* Giảm độ sáng ảnh */
+}
+
+
+.price{
+    font-size: 14px;
+    font-weight: bolder;
+    display: flex;
+    justify-content: flex-start;
+}
+.price p{
+  font-size: 1.0625rem;
+  color: #9d2226;
+}
+.price del{
+  color: #000000;
+  padding-left: 10px;
+  padding-top: 3px;
+  font-size: .75rem;
+  font-weight: 400;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 39.5%; /* Tỷ lệ 16:9 */
+}
+
+.video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* Giúp video luôn giữ đúng tỷ lệ và che đầy khung */
+}
+
+/* phan tranh */
+.pagination {
+  display: flex;
+  justify-content: center; /* Căn giữa các nút phân trang */
+  margin-top: 10px; /* Khoảng cách phía trên */
+  margin-bottom: 30px;
+  flex-wrap: wrap; /* Khi màn hình nhỏ, các nút sẽ xuống hàng */
+}
+
+.pagination button {
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+  margin: 5px; /* Khoảng cách giữa các nút */
+  padding: 0px 4px; /* Kích thước nút */
+  border: 1px solid #ececec; /* Viền xung quanh nút */
+  background-color: #f8f9fa; /* Màu nền nhạt cho các nút */
+  color: #333; /* Màu chữ cho các nút */
+  border-radius: 2px; /* Bo tròn các góc */
+  cursor: pointer; /* Thay đổi con trỏ khi di chuột qua */
+  transition: background-color 0.3s ease; /* Hiệu ứng chuyển màu */
+}
+
+.pagination button:hover {
+  background-color: #000000; /* Màu nền khi hover */
+  color: white; /* Màu chữ khi hover */
+}
+
+.pagination .btn-dark {
+  background-color: #000000; /* Màu nền cho nút trang hiện tại */
+  color: white; /* Màu chữ trắng cho nút hiện tại */
+  border-color: #000000; /* Viền cùng màu với nền */
+}
+
+.pagination .btn-outline-dark {
+  background-color: white; /* Màu nền cho các nút không phải là trang hiện tại */
+  color: #000000; /* Màu chữ cho nút không phải trang hiện tại */
+  border-color: #000000; /* Màu viền cho nút không phải trang hiện tại */
+}
+
+.pagination .btn-outline-dark:hover {
+  background-color: #000000; /* Màu nền khi hover */
+  color: white; /* Màu chữ khi hover */
+}
+
+/* Responsive: khi màn hình nhỏ hơn 768px */
+@media (max-width: 768px) {
+  .pagination button {
+    width: 30px;
+    height: 30px;
+    padding: 6px 8px; /* Giảm kích thước padding cho màn hình nhỏ */
+    font-size: 13px; /* Giảm kích thước chữ */
+  }
+}
+
+/* Responsive: khi màn hình nhỏ hơn 576px */
+@media (max-width: 576px) {
+  .pagination {
+    align-items: center;
+    display: flex;
+    justify-content: center; /* Căn giữa theo trục dọc */
+  }
+
+  .pagination button {
+    width: 30px; /* Nút chiếm toàn bộ chiều rộng màn hình */
+    margin: 5px; /* Khoảng cách trên và dưới mỗi nút */
+  }
+}

@@ -1,0 +1,288 @@
+.text-uppercase a{
+    color: black;
+    text-decoration: none;
+}
+.user-icon-container {
+  position: relative;
+}
+body.modal {
+  overflow: hidden;
+}
+.user-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  min-width: 120px;
+}
+.user-icon-container:hover .user-dropdown {
+  display: block;
+}
+.icon-h {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+hr{
+  color: #8d8b8b;
+}
+.logo{
+  padding: 5px;
+  margin: 0px;
+}
+.logo a{
+  display: flex;
+  justify-content: center;
+}
+.logo img{
+  width: 140px;
+  height: auto;
+}
+.cart-icon-container {
+  position: relative;
+  display: inline-block;
+}
+
+.icon-h {
+  font-size: 24px;
+  position: relative;
+}
+
+.cart-quantity-badge {
+  display: none; /* Hide badge by default */
+  position: absolute;
+  top: -4px;
+  right: -2px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 4px;
+  font-size: 8px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+/* Show badge only if there's a number in it */
+.cart-quantity-badge:not(:empty) {
+  display: inline;
+}
+
+.nav_2{
+  height: 65px;
+}
+.container{
+  max-width: 1045px;
+}
+.promotion-bar{
+  padding: 5px 20px;
+}
+.btn-warning{
+  color: white;
+  text-decoration:underline;
+}
+.btn-warning:hover{
+  text-decoration:none;
+}
+.li-h{
+  font-size: 14px;
+  font-weight: bolder;
+}
+.navbar-brand{
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+  font-size: 30px; 
+  font-weight:200;
+}
+.navbar-brand span{
+  font-weight: 900;
+  color: rgb(185, 4, 19);
+}
+.a-h{
+  font-size: 14px;
+}
+.card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.recommended-section h5 {
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.payment-options {
+  display: flex;
+  justify-content: center;
+}
+
+.payment-options svg {
+  color: #333;
+}
+
+.payment-options svg:hover {
+  color: #007bff;
+}
+
+.container h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.discount-banner {
+  background-color: #dc3545;
+  padding: 0.5rem;
+  color: #fff;
+}
+
+.discount-banner span {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.discount-banner span:not(:last-child) {
+  margin-right: 1.5rem;
+
+}
+
+a.text-danger {
+  color: #dc3545;
+  
+  font-weight: bold;
+}
+a.text-danger:hover {
+  text-decoration: underline;
+}
+.promotion-bar {
+  background-color: black;
+  font-size: 14px;
+}
+
+.small-text {
+  font-size: 12px;
+}
+
+.countdown{
+  font-weight: bolder;
+  width: 130px;
+}
+.navbar-brand img {
+  height: 50px;
+}
+
+.input-h {
+  width: 200px;
+}
+
+.icon-h {
+  font-size: 24px;
+  cursor: pointer;
+}
+.form-control:focus {
+  outline: none;
+  box-shadow: none;
+}
+.sub-nav a {
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.sub-nav a:hover {
+  color: #007bff;
+  text-decoration: underline;
+}
+.text-capitalize a{
+  font-size: .80rem;
+  line-height: 1.0625rem;
+  font-weight: bolder;
+  letter-spacing: .015625rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #000;
+}
+.text-capitalize a:hover{
+  color: rgb(195, 106, 0);
+}
+/* search */
+/* Tùy chỉnh cho toàn bộ thanh tìm kiếm */
+.search-container {
+  width: 100%;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.input-group{
+  width: 400px;
+  border-radius: 30px;
+  overflow: hidden; /* Đảm bảo các cạnh của biểu tượng và trường nhập không bị lồi ra */
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1); /* Bóng đổ nhẹ */
+  height: 35px;
+}
+
+.search-input {
+ 
+  font-size: 14px;
+  border: none;
+  padding-left: 0;
+  padding-right: 0;
+  box-shadow: none;
+  border-radius: 0;
+  height: 35px; /* Chiều cao đồng nhất */
+}
+
+/* CSS cho hiệu ứng hover gạch đen dưới các liên kết */
+.navbar-nav .nav-item .nav-link {
+  position: relative;
+  padding-bottom: 5px;
+}
+
+.navbar-nav .nav-item .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 3px;
+  background-color: black;
+  transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-item .nav-link:hover::after {
+  width: 100%;
+}
+
+.search-input::placeholder {
+  color: #ccc; /* Màu placeholder */
+}
+
+.search-icon-left, 
+.search-icon-right {
+  background-color: white;
+  border: none;
+  border-radius: 0;
+  padding-left: 12px;
+  padding-right: 12px;
+  font-size: 18px; /* Kích thước biểu tượng */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 35px; /* Chiều cao đồng nhất với trường nhập */
+}
+
+/* Tùy chỉnh cho icon */
+.search-icon-left i,
+.search-icon-right i {
+  color: #333; /* Màu của biểu tượng */
+}
+
+.search-icon-left {
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+
+.search-icon-right {
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
