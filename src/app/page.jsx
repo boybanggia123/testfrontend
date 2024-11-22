@@ -1,19 +1,39 @@
+"use client";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import ProductsHome from "./components/ProductsHome";
 
-export default async function Home() {
-  // Fetch dữ liệu bất đồng bộ
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/products`, {
-    cache: "no-store",
-  });
+export default  function Home() {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  // Kiểm tra lỗi khi fetch
-  if (!res.ok) {
-    console.error("Failed to fetch data");
-    return <div>Error loading products.</div>;
-  }
+  useEffect(() => {
+    // Fetch dữ liệu bất đồng bộ khi component mount
+    const fetchData = async () => {
+      try {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/products`, {
+          cache: "no-store", // Đảm bảo không cache
+        });
 
-  const data = await res.json();
+        if (!res.ok) {
+          throw new Error("Failed to fetch data");
+        }
+
+        const result = await res.json();
+        setData(result);
+      } catch (error) {
+        setError(error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []); // Chạy khi component mount lần đầu
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error loading products: {error.message}</div>;
 
   return (
     <>

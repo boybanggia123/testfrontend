@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "./components/header";
 import Footer from "./components/footer";
 import { Inter } from "next/font/google";
+import { Suspense } from "react";
 import Providers from "../redux/Provider";
 import "../../public/bootstrap/css/bootstrap.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
@@ -23,6 +24,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <Providers>
         <body className={inter.className}>
+          <Suspense>
           <Header />
           {children} {/* Đây là nơi các trang như Checkout sẽ được render */}
           <link
@@ -38,6 +40,7 @@ export default function RootLayout({ children }) {
           />
           <Footer />
           <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+          </Suspense>
         </body>
       </Providers>
     </html>

@@ -1,4 +1,5 @@
-"use client"
+"use client";
+
 import { useSearchParams, useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 import OtpVerificationForm from "../../components/OtpVerificationForm";
@@ -8,6 +9,7 @@ export default function OtpPage() {
   const searchParams = useSearchParams();
   const [email, setEmail] = useState(null);
 
+  // Sử dụng useEffect để xử lý email từ searchParams
   useEffect(() => {
     const emailParam = searchParams.get('email');
     if (emailParam) {
@@ -39,5 +41,14 @@ export default function OtpPage() {
     }
   };
 
-  return email ? <OtpVerificationForm onSubmit={handleOtpSubmit} /> : <p>Loading...</p>;
+ 
+  return (
+    <div>
+      {email ? (
+        <OtpVerificationForm onSubmit={handleOtpSubmit} />
+      ) : (
+        <p>Loading...</p>
+      )}
+    </div>
+  );
 }
