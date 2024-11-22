@@ -14,7 +14,7 @@ export default function ProductByCategoryPage() {
   const { id } = useParams();
   const [products, setProducts] = useState([]);
   const { data: categories, error } = useSWR(
-    `http://localhost:3000/products/${id}`,
+    `${process.env.NEXT_PUBLIC_API_URL}/products/${id}`,
     fetcher
   );
 
@@ -25,7 +25,7 @@ export default function ProductByCategoryPage() {
 
   useEffect(() => {
     async function fetchProducts() {
-      const res = await fetch("http://localhost:3000/products", {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/products`, {
         cache: "no-store",
       });
       const newProducts = await res.json();

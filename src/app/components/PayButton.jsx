@@ -38,7 +38,7 @@ const PayButton = () => {
   useEffect(() => {
     if (userId) {
       axios
-        .get(`http://localhost:3000/cart/${userId}`)
+        .get(`${process.env.NEXT_PUBLIC_API_URL}/cart/${userId}`)
         .then((res) => {
           setCartItems(res.data); 
         })
@@ -52,7 +52,7 @@ const PayButton = () => {
     setLoading(true);
     try {
       const response = await axios.post(
-        "http://localhost:3000/stripe/apply-coupon",
+        `${process.env.NEXT_PUBLIC_API_URL}/stripe/apply-coupon`,
         { couponCode, totalAmount: 10.00 } // totalAmount in dollars
       );
   
@@ -93,7 +93,7 @@ const PayButton = () => {
       const email = decoded?.email;
   
       const checkoutResponse = await axios.post(
-        `http://localhost:3000/stripe/create-checkout-session`,
+        `${process.env.NEXT_PUBLIC_API_URL}/stripe/create-checkout-session`,
         {
           cartItems,
           userId,

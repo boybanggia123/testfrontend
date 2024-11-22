@@ -28,7 +28,7 @@ export default function Cart() {
       try {
         const token = Cookies.get("token");
         if (token) {
-          const response = await axios.get("http://localhost:3000/detailuser", {
+          const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/detailuser`, {
             headers: { Authorization: `Bearer ${token}` },
           });
           const fetchedUserId = response.data._id;

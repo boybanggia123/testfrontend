@@ -30,7 +30,7 @@ export default function Detail({ params }) {
     error,
     isLoading,
   } = useSWR(
-    id ? `http://localhost:3000/productdetail/${id}` : null,
+    id ? `${process.env.NEXT_PUBLIC_API_URL}/productdetail/${id}` : null,
     fetcher,
     {
       refreshInterval: 6000,
@@ -48,7 +48,7 @@ export default function Detail({ params }) {
         const token = Cookies.get("token");
 
         if (token) {
-          const response = await axios.get("http://localhost:3000/detailuser", {
+          const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/detailuser`, {
             headers: {
               Authorization: `Bearer ${token}`,
             },
@@ -85,7 +85,7 @@ export default function Detail({ params }) {
 
       // Gửi yêu cầu tới API để thêm sản phẩm vào giỏ hàng
       const response = await axios.post(
-        "http://localhost:3000/cart", // Địa chỉ API thêm sản phẩm vào giỏ hàng
+        `${process.env.NEXT_PUBLIC_API_URL}/cart`, // Địa chỉ API thêm sản phẩm vào giỏ hàng
         {
           userId, // Thêm userId vào yêu cầu
           productId: product._id, // ID sản phẩm

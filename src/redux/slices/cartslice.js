@@ -7,7 +7,7 @@ export const fetchCart = createAsyncThunk(
   "cart/fetchCart",
   async (userId, thunkAPI) => {
     try {
-      const response = await axios.get(`http://localhost:3000/cart/${userId}`, {
+      const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/cart/${userId}`, {
         headers: {
           "Cache-Control": "no-store",
         },
@@ -28,7 +28,7 @@ export const addToCart = createAsyncThunk(
     }
 
     try {
-      const response = await axios.post(`http://localhost:3000/cart/${userId}/add`, { productId, quantity, size });
+      const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/cart/${userId}/add`, { productId, quantity, size });
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.response.data);
@@ -40,7 +40,7 @@ export const removeFromCart = createAsyncThunk(
   "cart/removeFromCart",
   async ({ userId, productId, size }, thunkAPI) => {
     try {
-      const response = await axios.delete("http://localhost:3000/cart", {
+      const response = await axios.delete(`${process.env.NEXT_PUBLIC_API_URL}/cart`, {
         data: { userId, productId, size },
       });
       return response.data;
@@ -55,7 +55,7 @@ export const updateCartItemQuantity = createAsyncThunk(
   "cart/updateCartItemQuantity",
   async ({ userId, productId, quantity, size }, thunkAPI) => {
     try {
-      const response = await axios.put(`http://localhost:3000/cart`, { userId, productId, quantity, size });
+      const response = await axios.put(`${process.env.NEXT_PUBLIC_API_URL}/cart`, { userId, productId, quantity, size });
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.response.data);

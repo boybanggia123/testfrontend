@@ -22,7 +22,7 @@ export default function Header() {
   }, [cartItems]);
 
   const { data: categories } = useSWR(
-    "http://localhost:3000/categories",
+    `${process.env.NEXT_PUBLIC_API_URL}/categories`,
     fetcher
   );
 
@@ -35,7 +35,7 @@ export default function Header() {
     if (token) {
       setIsLoggedIn(true);
 
-      fetch("http://localhost:3000/detailuser", {
+      fetch(`${process.env.NEXT_PUBLIC_API_URL}/detailuser`, {
         method: "GET",
         headers: {
           Authorization: `Bearer ${token}`,

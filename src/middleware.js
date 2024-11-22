@@ -8,7 +8,7 @@ export async function middleware(request) {
   }
 
   // Gọi đến API xác thực token
-  const res = await fetch("http://localhost:3000/checktoken", {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/checktoken`, {
     headers: {
       Authorization: `Bearer ${token.value}`,
     },

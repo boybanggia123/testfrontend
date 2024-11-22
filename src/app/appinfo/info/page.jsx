@@ -21,7 +21,7 @@ export default function InfoPage() {
         // Giả sử bạn đã nhận được thông tin người dùng từ API
         const updatedUser = {
           ...user,
-          avatarUrl: 'http://localhost:3000/img/' + user.avatar
+          avatarUrl: `${process.env.NEXT_PUBLIC_API_URL}/img/` + user.avatar
         };
         setUser(updatedUser);
       }, [user.avatar]);
@@ -42,7 +42,7 @@ export default function InfoPage() {
         } else {
           // Fetch user information using the token
           const getUser = async () => {
-            const res = await fetch("http://localhost:3000/detailuser", {
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/detailuser`, {
               headers: {
                 Authorization: `Bearer ${tokenFromCookie}`,
               },
@@ -95,7 +95,7 @@ export default function InfoPage() {
       }
       
         try {
-          const response = await fetch("http://localhost:3000/user/update", {
+          const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/user/update`, {
             method: "PUT",
             headers: {
               Authorization: `Bearer ${tokenValue}`,

@@ -19,7 +19,7 @@ const Search = () => {
 
     try {
       const response = await fetch(
-        `http://localhost:3000/search?key=${encodeURIComponent(keyword)}`
+        `${process.env.NEXT_PUBLIC_API_URL}/search?key=${encodeURIComponent(keyword)}`
       );
       if (!response.ok) {
         const errorData = await response.json();

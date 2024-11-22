@@ -23,7 +23,7 @@ export default function InfoBillModern() {
     if (userId) {
       const fetchOrders = async () => {
         try {
-          const response = await fetch(`http://localhost:3000/stripe/orderuser/${userId}`);
+          const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/stripe/orderuser/${userId}`);
           const data = await response.json();
           setOrders(data);
         } catch (error) {
@@ -37,7 +37,7 @@ export default function InfoBillModern() {
 
   const handleOrderClick = async (orderId) => {
     try {
-      const response = await fetch(`http://localhost:3000/stripe/orders/${orderId}`);
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/stripe/orders/${orderId}`);
       const data = await response.json();
       setSelectedOrder(data);
     } catch (error) {

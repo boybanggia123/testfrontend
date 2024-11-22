@@ -17,7 +17,7 @@ export default function ResetPasswordPage() {
 
   const handlePasswordSubmit = async (newPassword) => {
     try {
-      const response = await fetch("http://localhost:3000/reset-password", {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/reset-password`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
